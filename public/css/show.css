@@ -1,0 +1,87 @@
+*{
+    
+    font-family: "Roboto";
+}
+.myNavbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #1abc9c;
+}
+
+.navContainer{
+    width: 100%;
+    max-width: 1293px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.itemContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.navLeft{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navItem{
+    text-decoration: none;
+    list-style: none;
+    padding: 5px;
+    font-family: "Noto Sans";
+    font-size: 12px;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+.navBrand{
+    font-family: "Noto Sans";
+    font-size: 15px;
+    /* font-weight: 300; */
+    letter-spacing: 3px;
+}
+
+.Footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: "Roboto";
+    font-size: 12px;
+}
+
+.gitUserName{
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+.content{
+    background-color: #f2fbf9;
+    padding: 20px;
+    border: 1.5px solid rgb(203, 201, 201);
+    border-radius: 10px;
+}
+
+
+.articleHead{
+    /* text-decoration: underline; */
+}
+
+.logoLink{
+    text-decoration: none;
+    color: black;
+    
+    
+}

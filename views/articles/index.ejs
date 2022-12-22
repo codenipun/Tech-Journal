@@ -7,30 +7,35 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Righteous&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/css/index.css"> -->
     <title>Blog</title>
-    <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <p class="navbar-brand">DAILY JOURNAL</p>
-          </div >
-            <ul class="navbar-nav navbar-right">
-              <!-- 6 -->
-              <li id="home"><a href="/">HOME</a></li>
-              <li id="about"><a href="/about">ABOUT US</a></li>
-              <li id="contact"><a href="/contact">CONTACT US</a></li>
-              
-              <a href='/compose'><button class="btn btn-primary">Add New</button></a>
-            </ul>
+    <nav class="myNavbar">
+        <div class="navContainer">
+          <div class="navLeft">
+            <h1 class="navBrand"><a class="logoLink" href="/">TECH JOURNAL</a></h1>
+            <!-- <h1 class="navBrand"></h1> -->
+          </div>
+            <div class="navRight">
+                  <ul class="itemContainer">
+                    <!-- 6 -->
+                    <li class="navItem"><a class="link" href="/">HOME |</a></li>
+                    <li class="navItem"><a class="link" href="/about">ABOUT US |</a></li>
+                    <li class="navItem"><a class="link" href="/contact">CONTACT US</a></li>
+                  </ul>
+            </div>
         </div>
       </nav>
 </head>
 <body>
     <div class="container">
-        <h1 class="mb-4">Blog Articles</h1>
+        <h1 class="mb-4 mainHeading">Science/Technology</h1>
         <a href="/articles/new" class="btn btn-success">New Article</a>
 
-        <% articles.forEach(article => {%>
-            <div class="card mt-4">
+        <% articles.length===0 ? "No Articles to Show" : articles.forEach(article => {%>
+            <div class="card mt-4 myCard">
                 <div class="card-body">
                     <h4 class="card-title"><%=article.title%></h4>
                     <div class="card-subtitle text-muted mb-2">
@@ -38,13 +43,26 @@
                     </div>
                     <div class="card-text mb-2"><%=article.description%></div>
                     <a href="articles/<%=article.slug%>" class="btn btn-primary">Read More</a>
-                    <a href="articles/edit" class="btn btn-secondary">Edit</a>
+                    <a href="/articles/edit/<%= article.id %>" class="btn btn-secondary">Edit</a>
                     <form action="/articles/<%=article.id%>?_method=DELETE" method="POST" class="d-inline">
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </div>
             </div>
         <% }) %>
+        <div class="newsLetterMC">
+            <div class="newsLetterSC">
+                <h2 class="nlHeading">Subscribe to our News Letter</h2>
+                <form class="nlForm">
+                    <input required class="nlInput" type="email" placeholder="Enter your email"/>
+                    <button type="submit" class="btn btn-primary nlBtn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="Footer">
+            <p>Made with ❤️ by <a class="gitUserName" href="https://github.com/codenipun">codenipun</a></p>
+        </div>
     </div>
+    
 </body>
 </html>
